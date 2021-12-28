@@ -9,6 +9,8 @@
  *
  * @package NoonPost
  */
+$options = get_option('noonpost_options');
+$socials = $options['socials'];
 
 ?>
 <!doctype html>
@@ -75,26 +77,16 @@
 				</div>
 				<div class="social-icones">
 					<ul class="list-inline">
-						<li>
-							<a href="#">
-								<i class="fab fa-facebook-f"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i class="fab fa-instagram"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i class="fab fa-twitter"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i class="fab fa-youtube"></i>
-							</a>
-						</li>
+						<?php
+						if (!empty($socials)) : foreach ($socials as $social) :
+						?>
+								<li>
+									<a href="<?php echo esc_url($social['link']); ?>" target="<?php echo esc_attr($social['link_target']); ?>">
+										<i class="<?php echo esc_attr($social['icon']) ?>"></i>
+									</a>
+								</li>
+						<?php endforeach;
+						endif; ?>
 					</ul>
 				</div>
 

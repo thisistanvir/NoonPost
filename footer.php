@@ -9,60 +9,53 @@
  *
  * @package NoonPost
  */
-
+$options = get_option('noonpost_options');
+$socials = $options['socials'];
+$enable_newsletter = $options['enable_newsletter'];
+$shortcode = $options['subscribe_shortcode'];
 ?>
 
-<!--newslettre-->
-<section class="newslettre">
-	<div class="container-fluid">
-		<div class="newslettre-width text-center">
-			<div class="newslettre-info">
-				<h5><?php esc_html_e('Subscribe to our Newslatter') ?></h5>
-				<p> <?php esc_html_e('Sign up for free and be the first to get notified about new posts.') ?> </p>
-			</div>
-			<form action="#" class="newslettre-form">
-				<div class="form-flex">
-					<div class="form-group">
-						<input type="email" name="email" class="form-control" placeholder="Your email adress" required="required">
-					</div>
-					<button class="submit-btn" type="submit"><?php esc_html_e('Subscribe'); ?>
-					</button>
+<?php if ($enable_newsletter == true) : ?>
+	<!--newslettre-->
+	<section class="newslettre">
+		<div class="container-fluid">
+			<div class="newslettre-width text-center">
+				<div class="newslettre-info">
+					<h5><?php echo esc_html__($options['newsletter_title'], 'noonpost'); ?></h5>
+					<p> <?php echo esc_html__($options['newsletter_subtitle'], 'noonpost'); ?> </p>
 				</div>
-			</form>
-			<div class="social-icones">
-				<ul class="list-inline">
-					<li>
-						<a href="#">
-							<i class="fab fa-facebook-f"></i>Facebook</a>
-					</li>
-					<li>
-						<a href="#">
-							<i class="fab fa-twitter"></i>Twitter </a>
-					</li>
-					<li>
-						<a href="#">
-							<i class="fab fa-instagram"></i>Instagram </a>
-					</li>
-					<li>
-						<a href="#">
-							<i class="fab fa-youtube"></i>Youtube</a>
-					</li>
-				</ul>
+				<div class="newslettre-form">
+					<?php echo do_shortcode($shortcode); ?>
+				</div>
+				<div class="social-icones">
+					<ul class="list-inline">
+						<?php
+						if (!empty($socials)) :
+							foreach ($socials as $social) :
+						?>
+								<li>
+									<a href="<?php echo esc_url($social['link']); ?>" target="<?php echo esc_attr($social['link_target']); ?>">
+										<i class="<?php echo esc_attr($social['icon']) ?>"></i><?php echo esc_html__($social['social_text']) ?></a>
+								</li>
+						<?php endforeach;
+						endif; ?>
+
+					</ul>
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
+<?php endif; ?>
 
 <!--footer-->
 <footer class="footer">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-lg-12">
-				<?php
-				if (is_dynamic_sidebar('copyright')) {
-					dynamic_sidebar('copyright');
-				}
-				?>
+				<div class="copyright">
+					<p><?php echo $options['copyright']; ?></p>
+				</div>
+
 				<div class="back">
 					<a href="#" class="back-top">
 						<i class="arrow_up"></i>

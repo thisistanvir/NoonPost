@@ -84,60 +84,60 @@ Table of Content
     /* -----------------------------------
        Carousel-hero
     -----------------------------------*/
-    $(".carousel-hero .owl-carousel").owlCarousel({
-        loop: true,
-        stagePadding: 0,
-        margin: 0,
-        nav: true,
-        autoplay: true,
-        center: false,
-        dots: false,
-        mouseDrag: true,
-        touchDrag: true,
-        smartSpeed: 1000,
-        autoplayHoverPause: false,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            768: {
-                items: 1,
-            },
-            1200: {
-                items: 1,
-            },
-        }
-    });
+    // $(".carousel-hero .owl-carousel").owlCarousel({
+    //     loop: true,
+    //     stagePadding: 0,
+    //     margin: 0,
+    //     nav: true,
+    //     autoplay: true,
+    //     center: false,
+    //     dots: false,
+    //     mouseDrag: true,
+    //     touchDrag: true,
+    //     smartSpeed: 1000,
+    //     autoplayHoverPause: false,
+    //     responsiveClass: true,
+    //     responsive: {
+    //         0: {
+    //             items: 1,
+    //         },
+    //         768: {
+    //             items: 1,
+    //         },
+    //         1200: {
+    //             items: 1,
+    //         },
+    //     }
+    // });
     /* -----------------------------------
         post-single-gellery
     -----------------------------------*/
-    $(".post-single-gallery .owl-carousel").owlCarousel({
-        loop: true,
-        stagePadding: 5,
-        margin: 30,
-        nav: false,
-        autoplay: true,
-        center: false,
-        dots: true,
-        mouseDrag: true,
-        touchDrag: true,
-        smartSpeed: 1000,
-        autoplayHoverPause: false,
-        responsiveClass: true,
-        responsive: {
-            0: {
-                items: 1,
-            },
-            768: {
-                items: 1,
-            },
-            1200: {
-                margin: 30,
-                items: 1,
-            },
-        }
-    });
+    // $(".post-single-gallery .owl-carousel").owlCarousel({
+    //     loop: true,
+    //     stagePadding: 5,
+    //     margin: 30,
+    //     nav: false,
+    //     autoplay: true,
+    //     center: false,
+    //     dots: true,
+    //     mouseDrag: true,
+    //     touchDrag: true,
+    //     smartSpeed: 1000,
+    //     autoplayHoverPause: false,
+    //     responsiveClass: true,
+    //     responsive: {
+    //         0: {
+    //             items: 1,
+    //         },
+    //         768: {
+    //             items: 1,
+    //         },
+    //         1200: {
+    //             margin: 30,
+    //             items: 1,
+    //         },
+    //     }
+    // });
 
 
 

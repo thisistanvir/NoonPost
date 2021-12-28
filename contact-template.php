@@ -4,6 +4,10 @@
  * Template Name: Contact Template
  */
 get_header();
+
+$options = get_option('noonpost_options');
+$contact_map = $options['contact_map'];
+$shortcode = $options['contact_shortcode'];
 ?>
 
 <!--contact us-->
@@ -21,11 +25,10 @@ get_header();
          <div class="col-lg-8 mt-30">
             <div class="contact">
                <div class="google-map">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3104.5761533072873!2d-78.19644468515456!3d38.91080675375955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b5c5dc680d0b2b%3A0x1e9ff0b6bb7a2f87!2s1000%20Proctor%20Ln%2C%20Front%20Royal%2C%20VA%2022630%2C%20%C3%89tats-Unis!5e0!3m2!1sfr!2sma!4v1578068093888!5m2!1sfr!2sma" allowfullscreen="">
-                  </iframe>
+                  <iframe src="https://maps.google.com/maps?q=<?php echo $contact_map['latitude']; ?>,<?php echo $contact_map['longitude']; ?>&hl=es;z=<?php echo $contact_map['zoom']; ?>&amp;output=embed"></iframe>
                </div>
                <div class="widget-form contact_form" id="main_contact_form">
-                  <?php echo do_shortcode('[contact-form-7 id="78" title="Contact Form"]') ?>
+                  <?php echo do_shortcode($shortcode); ?>
                </div>
             </div>
          </div>

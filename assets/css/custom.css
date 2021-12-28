@@ -424,7 +424,7 @@ ul {
 
 .newslettre-form {
 	margin: auto;
-	margin-bottom: 50px;
+	/* margin-bottom: 50px; */
 	width: 100%;
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -437,7 +437,6 @@ ul {
 	display: flex;
 	-webkit-box-align: center;
 	-ms-flex-align: center;
-	align-items: center;
 	-webkit-box-pack: center;
 	-ms-flex-pack: center;
 	justify-content: center;

@@ -149,15 +149,6 @@ function noonpost_widgets_init()
 			'after_title'   => '</h5>',
 		)
 	);
-	register_sidebar(
-		array(
-			'name'          => esc_html__('Copyright Text', 'noonpost'),
-			'id'            => 'copyright',
-			'description'   => esc_html__('Add copyright text here.', 'noonpost'),
-			'before_widget' => '<div id="%1$s" class="copyright  %2$s">',
-			'after_widget'  => '</div>',
-		)
-	);
 }
 add_action('widgets_init', 'noonpost_widgets_init');
 
@@ -189,6 +180,10 @@ add_action('wp_enqueue_scripts', 'noonpost_scripts');
 // Plugin Activation
 require get_template_directory() . '/inc/plugin-activation.php';
 
+// Theme options
+if (class_exists('CSF')) {
+	require get_template_directory() . '/inc/noonpost-options.php';
+}
 
 // Category list
 if (!function_exists('categories_list')) {
