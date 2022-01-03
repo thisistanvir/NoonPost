@@ -12,14 +12,14 @@
 
 ?>
 
-<div class="search">
+<div class="search-popup">
    <div class="container-fluid">
       <div class="search-width  text-center">
          <button type="button" class="close">
             <i class="icon_close"></i>
          </button>
          <form class="search-form">
-            <input type="search" name="s" value="" placeholder="What are you looking for?">
+            <input type="search" name="s" placeholder="What are you looking for?">
             <button type="submit" class="search-btn"><?php esc_html_e('search') ?></button>
          </form>
       </div>

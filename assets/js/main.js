@@ -57,10 +57,10 @@ Table of Content
            Search
     ----------------------------------- */
     $('.search-icon').on('click', function () {
-        $('.search').addClass('search-open');
+        $('.search-popup').addClass('search-open');
     });
     $('.close').on('click', function () {
-        $('.search').removeClass('search-open');
+        $('.search-popup').removeClass('search-open');
     });
 
 

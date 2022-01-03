@@ -66,6 +66,11 @@
                                     <i class="fab fa-linkedin-in"></i>
                                  </a>
                               </li>
+                              <li>
+                                 <a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&description=<?php the_title(); ?>" target="_blank" class="color-pinterest">
+                                    <i class="fab fa-pinterest"></i>
+                                 </a>
+                              </li>
                            </ul>
                         </div>
                      </div>
